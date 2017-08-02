@@ -66,6 +66,20 @@ a:focus {
 
 .social-list > li {
     margin: 0 50px 30px 0;
+    transition: color 0.3s ease;
+}
+
+.social-list > li {
+    margin: 0 50px 30px 0;
+}
+
+.social-list > li > a {
+    transition: color 0.3s ease;
+    color: #333;
+}
+
+.social-list > li > a:hover {
+    color: #ff5417;
 }
 
 .social-name {
