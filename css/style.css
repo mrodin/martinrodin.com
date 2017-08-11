@@ -19,6 +19,10 @@ a {
     color: #ff5417;
 }   
 
+section {
+    margin-top: 100px;
+}
+
 footer {
     margin-bottom: 100px;
 }
@@ -51,16 +55,6 @@ a:focus {
 
 .navbar-default .navbar-nav > li > a:focus {
     color: #ff5417;
-}
-
-.navbar-fixed-top {
-    min-height: 80px;
-}
-
-.navbar-nav > li > a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    line-height: 80px;
 }
 
 .img-center {
@@ -130,9 +124,17 @@ a:focus {
     margin-top: 75px;
 }
 
-@media (max-width: 767px) {
-    .navbar-nav > li > a {
-    line-height: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px; }
+.footer-info {
+    margin: 70px 0 40px 0;
+    color: #B8B8B8;
+}
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    height: 100px; /* Header portrait will not overlap menu */
+  }
+
+  .navbar-toggle {
+    margin-top: 25px; /* Adjust the position of menu toggle button */
+  }
 }
