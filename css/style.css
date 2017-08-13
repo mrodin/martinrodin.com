@@ -57,6 +57,10 @@ a:focus {
     color: #ff5417;
 }
 
+.navbar-fixed-top {
+    min-height: 105px;
+}
+
 .img-center {
     margin: 0 auto;
 }
