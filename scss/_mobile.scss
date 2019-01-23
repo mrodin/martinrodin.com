@@ -7,6 +7,15 @@
 
 // Desktops & laptops
 @include mediaLg {
+  .about-info {
+    grid-template-areas: 
+    'bioimage'
+    'bio'
+    'dev-skills'
+    'pm-skills';
+    grid-template-columns: 1fr;
+  }
+  
   .projects {
     grid-template-columns: repeat(3, 1fr);
   }
