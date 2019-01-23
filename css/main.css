@@ -174,7 +174,8 @@ section {
     border-bottom: #F9812A 5px solid; }
     .about-info .skills .skill-list {
       display: grid;
-      grid-template-columns: 1fr 1fr; }
+      grid-template-columns: 1fr 1fr;
+      text-align: left; }
 
 .projects {
   display: grid;
@@ -236,6 +237,9 @@ section {
     grid-template-columns: repeat(4, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'dev-skills' 'pm-skills';
+    grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(3, 1fr); } }
 
