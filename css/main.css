@@ -90,6 +90,55 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+  margin-bottom: 5px; }
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg); }
+
+.flip-container, .front, .back {
+  width: 100%;
+  min-width: 250px;
+  height: 350px; }
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative; }
+
+/* hide back of pane during swap */
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+  background: #515151;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+/* back, initially hidden pane */
+.back {
+  transform: rotateY(180deg);
+  background: #f9842f;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.back ul {
+  margin: 0;
+  text-align: left; }
+
 * {
   box-sizing: border-box; }
 
@@ -153,7 +202,7 @@ section {
 .about-info {
   margin-top: 5rem;
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 1.5rem;
   grid-template-areas: '. . bioimage bioimage bioimage bioimage bio bio bio bio . .' '. . dev-skills dev-skills dev-skills dev-skills pm-skills pm-skills pm-skills pm-skills . .';
   grid-template-columns: repeat(12, 1fr); }
   .about-info .bio-image {
@@ -180,14 +229,11 @@ section {
 .projects {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.7rem; }
+  grid-gap: 1.5rem;
+  margin-bottom: 2rem; }
   .projects img {
-    width: 100%;
-    border: 1px #fff solid; }
-    .projects img:hover {
-      opacity: 0.5;
-      border-color: #F9812A;
-      transition: all 0.5s ease-out; }
+    max-width: 100%;
+    max-height: 100%; }
 
 .boxes {
   display: flex;
@@ -225,23 +271,19 @@ section {
   background: #c4c4c4;
   color: #333; }
 
-#main-footer {
+.main-footer {
   text-align: center;
   padding: 1rem;
   background: #2b2b2b;
-  color: #fff;
+  color: #5e5e5e;
   height: 60px; }
-
-@media screen and (min-width: 1171px) {
-  .projects {
-    grid-template-columns: repeat(4, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'dev-skills' 'pm-skills';
     grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -273,7 +315,7 @@ section {
     grid-template-areas: 'bioimage' 'bio' 'dev-skills' 'pm-skills';
     grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
